@@ -1,0 +1,17 @@
+関係ないbot
+
+HowToUse:
+	./kankeinai-bot mattn-daisuki mattn-channel mattn
+
+	00:18 < hasegawa> mattnのはてブ寂しいな
+	00:18 < kankeinai-bot> それmattn関係ないだろ！jk
+
+Build:
+	# make
+
+Author:
+	mattn
+
+License:
+	BSD
+
