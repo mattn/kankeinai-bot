@@ -100,7 +100,7 @@ main(int argc, char* argv[]) {
         if (aa.size() > 1 && aa[0].to_str() != nick) {
           cout << aa[0].serialize() << endl;
           cout << aa[1].serialize() << endl;
-          if (!strncmp(aa[1].to_str().c_str(), word.c_str(), word.size())) {
+          if (!strstr(aa[1].to_str().c_str(), word.c_str())) {
               map<string, string> saydata;
               saydata["s"] = sid;
               std::stringstream s;
