@@ -1,7 +1,7 @@
 all : kankeinai-bot
 
 kankeinai-bot : kankeinai-bot.cc nanowww/nanowww.h picojson/picojson.h
-	g++ -o kankeinai-bot -Inanowww -Ipicojson -I. kankeinai-bot.cc picohttpparser/picohttpparser.c
+	g++ -o kankeinai-bot -Inanowww/extlib/ -Inanowww -Ipicojson -I. kankeinai-bot.cc picohttpparser/picohttpparser.c
 
 nanowww/nanowww.h :
 	git clone git://github.com/tokuhirom/nanowww.git

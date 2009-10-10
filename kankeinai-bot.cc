@@ -30,19 +30,10 @@ value get_json(string url, map<string, string>& postdata) {
   value v;
   char error[256];
   string data;
-  map<string, string>::iterator it;
-
-  for (it = postdata.begin(); it != postdata.end(); it++) {
-      if (data.size()) data += "&";
-      data += it->first + "=";
-      data += it->second;
-  }
 
   Client client;
-  Request req("POST", url.c_str(), data.c_str());
   Response res;
-  req.set_header("Content-Type", "application/x-www-form-urlencoded");
-  if (client.send_request(req, &res)) {
+  if (client.send_post(&res, url.c_str(), postdata)) {
     const char* ptr = res.content().c_str();
     string err = parse(v, ptr, ptr + strlen(ptr));
     if (!err.empty()) cerr << err << endl;
